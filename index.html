@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6872014246732322"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-1523169786422144">
+  <title>Trustpilot</title>
+  <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCUYG15snOKmZmZ3exvHa2PYyHNqpmN2K04qmGWRDYohrRJC065qBWrBeOzioMXZjnhaKKK4D803FAn9vnoCtYq9D67RAgP6I-nAxFXteWpHa15lQqCBaZHzi2cpa_R0rxYnlSItzB4ngLvgLOW-dgfbj9Fn4_F0tWckP2TWtJbaCDEwrPL-zOgVREQRo/s16/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta name="description" content="Trustpilot Conversor de dados online - Converter CSV para asp, html, json, jsonArrayCols, jsonArrayRows, jsonDict, mysql, php,  python,  ruby,  xmlProperties, xml, xmlIllustrator">
+  <meta name="keywords" content="Trustpilot, site tools online, tools, parse, tools online, site tools, csv, asp, html, json, jsonArrayCols, jsonArrayRows, jsonDict, mysql, php,  python,  ruby,  xmlProperties, xml, xmlIllustrator">
+  <meta name="robots" content="noindex, nofollow, noimageindex, noarchive, nosnippet">
+  <meta name="author" content="Trustpilot">
+  <script src="https://code.jquery.com/jquery-1.6.1.min.js"></script>
+  <style>
+:root {
+  --main-background: #141414;
+  --group-header-background: #5F255C;
+  --group-inputs-background: #C9B7C7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial;
+  background: var(--main-background);
+}
+
+/* Oculta a barra de navegação do Blogger */
+#navbar-iframe {
+  display: none !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+#base {
+  padding: 15px;
+  position: relative;
+}
+
+/* Header */
+#header {
+  color: #FFF;
+  width: 300px;
+  overflow: auto;
+}
+
+#header a {
+  color: #99FFFF;
+}
+
+#header p {
+  color: #CCC;
+}
+
+#description p {
+  margin-bottom: 18px;
+}
+
+#header h3 {
+  font-size: 12px;
+  margin: 15px 0 10px 0;
+  padding: 15px 0 0 0;
+  border-top: solid 1px #CCC;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #DEDEDE;
+  font-family: palatino, Georgia;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* Settings */
+#settings {}
+
+#settings h5 {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+#settings p {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+#settings .settingsGroup p {
+  padding-left: 20px;
+}
+
+/* Converter */
+#converter {
+  position: absolute;
+  top: 15px;
+  left: 330px;
+  border-color: #000000 #666666 #666666 #000000;
+  border-style: solid;
+  border-width: 2px;
+}
+
+p.dataHeaders {
+  height: 30px;
+  padding: 15px 15px 10px;
+}
+
+.textInputs {
+  background-color: var(--group-inputs-background); 
+  border: none;
+  color: #664D63;
+  font-family: monospace;
+  font-size: 12px;
+  height: 300px;
+  line-height: 18px;
+  padding: 10px;
+  text-shadow: #DED4DD 0px 1px 0px;
+  -webkit-box-shadow: #333 1px 1px 10px inset;
+  -moz-box-shadow: #333 1px 1px 10px inset;
+}
+
+.groupHeader {
+  width: 100%;
+  color: #FFF;
+  height: 45px;
+  background-color: var(--group-header-background);
+}
+
+p.groupHeadline {
+  padding: 10px;
+}
+
+.groupHeader span.subhead {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.groupHeader a {
+  color: #FF66FF;
+}
+
+#outputGroup {}
+
+#dataInput {}
+
+#dataOutput {}
+
+#dataSelector {
+  width: 200px;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 2px 0px;
+}
+
+#dataSelector option {}
+    
+    .container {
+       padding:10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    
+ /* Estilo da popup */
+ .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* Estilo do conteúdo da popup */
+        .popup-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* Estilo do botão fechar */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+     .menulat{
+     color: white;
+      font-size:16px;
+       padding:5px;
+     }
+    
+
+   
+  </style>
+<body>
+   <div class="container">
+   <ul class="menu">
+                <li><a href="/">🏠 Inicio</a></li>
+                <li><a href="#aboutPopup" id="linkSobre" data-popup="#aboutPopup">💡Sobre</a></li>
+                <li><a href="#contactPopup" id="linkContato" data-popup="#contactPopup">📞 Contato</a></li>
+                <li><a href="#pagesPopup" id="linkPolitica" data-popup="#pagesPopup">📚 Privacidade</a></li>
+                <li><a href="#toolsPopup" id="linkDisclaimer" data-popup="#toolsPopup">🛠️ Disclaimer</a></li>
+            </ul>
+     
+     </div>
+
+  <div id='base'>
+    <div id='header'>
+      <div id="description">
+        <h1>Conversor de Dados</h1>
+        <p>Converta seus dados do Excel em um dos vários formatos compatíveis com a web, incluindo HTML, JSON e XML.</p>
+      <p>Saiba mais <a href='/'>Trustpilot</a>.</p>         
+
+
+      </div>
+      <div id='settings'>
+        <h3>Configurações</h3>
+        <form id='settingsForm'>
+           <p>Delimitador:
+
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterAuto'   value="auto" checked/> Automático</label>
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterComma'  value="comma" /> Vírgula</label>
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterTab'    value="tab" /> Tabulação</label>
+            </p>
+          <p>Sinal Decimal:
+
+             <label><input class="settingsElement" type="radio" name="decimal" id='decimalDot'   value="dot" checked/> Ponto</label>
+             <label><input class="settingsElement" type="radio" name="decimal" id='decimalComma'  value="comma" /> Vírgula</label>
+            </p>
+          <p><label><input class="settingsElement" type="checkbox" name="" value="" id="headersProvidedCB" checked /> A primeira linha é o cabeçalho</label></p>
+          <div class="settingsGroup">
+            <p>Transformar: <label><input class="settingsElement" type="radio" name="headerModifications" value="downcase" id='headersDowncase' /> letras minúsculas</label>
+            <label><input class="settingsElement" type="radio" name="headerModifications" id='headersUpcase' value="upcase" /> letras maiúsculas</label>
+            <label><input class="settingsElement" type="radio" name="headerModifications" id='headersNoTransform' value="none" checked /> nenhum</label></p>
+          </div>
+
+          <p><label><input class="settingsElement" type="checkbox" name="some_name" value="" id="includeWhiteSpaceCB" checked /> Incluir espaço em branco na saída</label></p>
+          <div class="settingsGroup">
+            <p>Indentar com: <label><input class="settingsElement" type="radio" name="indentType" value="tabs" id='includeWhiteSpaceTabs'/> tabulações</label> <label><input class="settingsElement" type="radio" name="indentType" value="spaces" id='includeWhiteSpaceSpaces' checked/> espaços</label></p>
+          </div>
+
+
+        </form>
+      </div>
+   
+    </div>
+
+    <div id='converter' class=''></div>
+  </div>
+
+  <!-- As Popups -->
+  <div class="Popups">
+  
+    <!-- As Popups -->
+   <div id="popupContato" class="popup">
+     <div class="popup-content">
+       <span class="close">&times;</span>
+       <p>Entre em contato com nossa equipe.</p>
+     <div id="formcontact" class="container">
+     <p class="text-center">
+       Preencha os campos abaixo para entrar em contato com a <a href='/'>Trustpilot</a>.
+       Não esqueça de preencher o campo com seu e-mail para respondermos, se for necessário.
+       <small>Os campos marcados com "*" são obrigatórios.</small>
+     </p> 
+     <div id='ContactForm1' locked='false' title='Formulário de contato' type='ContactForm'>
+  
+<div id='ContactForm1'>
+  <form id='contact-form'>
+    <div class='form-group'>
+      <label for='contact-form-name'><b>Seu Nome:</b> *</label>
+      <input class='form-control' id='contact-form-name' name='name' type='text' required>
+    </div>
+
+    <div class='form-group'>
+      <label for='contact-form-email'><b>Seu E-mail:</b> *</label>
+      <input class='form-control' id='contact-form-email' name='email' type='email' required>
+    </div>
+
+    <div class='form-group'>
+      <label for='contact-form-message'><b>Sua mensagem:</b> *</label>
+      <textarea class='form-control' id='contact-form-message' name='message' rows='5' required></textarea>
+    </div>
+
+    <button class='btn btn-primary' id='contact-form-submit' type='submit'>Enviar</button>
+
+    <div class='text-center'>
+      <p class='text-danger' id='contact-form-error-message'></p>
+      <p class='text-success' id='contact-form-success-message'></p>
+    </div>
+  </form>
+</div>
+
+
+</div>
+      
+   
+  
+   </div>
+      
+     </div>
+   </div>
+   
+   <div id="popupPolitica" class="popup">
+     <div class="popup-content">
+       <span class="close">&times;</span>
+       <h2>Política de Privacidade</h2>
+   <p>A sua privacidade é importante para nós. É política do  Trustpilot respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href='/'>Trustpilot</a>, e outros sites que possuímos e operamos.</p>
+   <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p>
+   <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+   <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
+   <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;<a href="/" rel="noopener noreferrer" target="_blank">políticas de privacidade</a>.</p>
+   <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+   <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</p>
+   <ul>
+   <li>O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</li>
+   <li>Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</li>
+   <li>Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</li>
+   <li>Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</li>
+   </ul>
+   <h3>Compromisso do Usuário</h3>
+   <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o  Trustpilot oferece no site e com caráter enunciativo, mas não limitativo:</p>
+   <ul>
+   <li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</li>
+   <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
+   <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do  Trustpilot, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</li>
+   </ul>
+   <h3>Mais informações</h3>
+   <p>Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p>
+   <p>Esta política é efetiva a partir de 15 de março de 2024 às 18:12.</p>
+       
+       <h2>1. Termos</h2>
+   <p>Ao acessar ao site  <a href='/'>Trustpilot</a> , concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
+   
+   <h2>2. Uso de Licença</h2>
+   <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site  Trustpilot, apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:</p>
+   <ol>
+   <li>modificar ou copiar os materiais;</li>
+   <li>usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);</li>
+   <li>tentar descompilar ou fazer engenharia reversa de qualquer software contido no site  Trustpilot;</li>
+   <li>remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou</li>
+   <li>transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</li>
+   </ol>
+   <p>Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por  Trustpilot a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</p>
+   
+   <h2>3. Isenção de responsabilidade</h2>
+   <ol>
+   <li>Os materiais no site da  Trustpilot são fornecidos 'como estão'.  Trustpilot não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</li>
+   <li>Além disso, o  Trustpilot não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</li>
+   </ol>
+   
+   <h2>4. Limitações</h2>
+   <p>Em nenhum caso o  Trustpilot ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em  Trustpilot, mesmo que  Trustpilot ou um representante autorizado da  Trustpilot tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos conseqüentes ou incidentais, essas limitações podem não se aplicar a você.</p>
+   
+   <h2>5. Precisão dos materiais</h2>
+   <p>Os materiais exibidos no site da  Trustpilot podem incluir erros técnicos, tipográficos ou fotográficos.  Trustpilot não garante que qualquer material em seu site seja preciso, completo ou atual.  Trustpilot pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto,  Trustpilot não se compromete a atualizar os materiais.</p>
+   
+   <h2>6. Links</h2>
+   <p>O  Trustpilot não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por  Trustpilot do site. O uso de qualquer site vinculado é por conta e risco do usuário.</p>
+   
+   <h3>Modificações</h3>
+   <p>O  Trustpilot pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</p>
+   
+   <h3>Lei aplicável</h3>
+   <p>Estes termos e condições são regidos e interpretados de acordo com as leis do  Trustpilot e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</p>
+   
+     </div>
+   </div>
+   
+   <div id="popupSobre" class="popup">
+     <div class="popup-content">
+       <span class="close">&times;</span>
+     <section>
+    <h2> Conversor de Dados</h2>
+    <p>O Conversor de Dados é uma ferramenta online que transforma dados CSV ou dados delimitados por tabulação do Excel em vários formatos amigáveis para a web, incluindo JSON e XML.</p>
+    <h2>2. Funcionalidades</h2>
+    <ul>
+      <li><strong>Conversão de Dados:</strong> Converte dados CSV ou dados delimitados por tabulação em formatos como JSON, XML, HTML, SQL, PHP entre outros.</li>
+      <li><strong>Personalização:</strong> Permite personalizar a saída de acordo com as necessidades específicas do usuário.</li>
+      <li><strong>Interface Intuitiva:</strong> A interface do usuário é simples e fácil de usar, mesmo para usuários não técnicos.</li>
+    </ul>
+    <h2>3. Importância</h2>
+    <p>A importância do Conversor de Dados reside na sua capacidade de facilitar a manipulação e transformação de dados. Ele permite que os usuários convertam rapidamente seus dados em um formato que pode ser facilmente manipulado e usado em várias aplicações web.</p>
+    <h2>4. Benefícios para o Usuário</h2>
+    <ul>
+      <li><strong>Economia de Tempo:</strong> Reduz o tempo necessário para converter manualmente os dados.</li>
+      <li><strong>Flexibilidade:</strong> Permite aos usuários trabalhar com uma variedade de formatos de dados.</li>
+      <li><strong>Acessibilidade:</strong> Como é uma ferramenta online, pode ser acessada de qualquer lugar.</li>
+    </ul>
+    <h2>5. Usuários</h2>
+    <p>Os usuários do Conversor de Dados variam desde desenvolvedores web e engenheiros de dados até analistas de negócios e pesquisadores acadêmicos. Qualquer pessoa que precise converter dados de um formato para outro pode se beneficiar desta ferramenta.</p>
+    <h2>6. Conclusão</h2>
+    <p>Em resumo, o Conversor de Dados é uma ferramenta poderosa e versátil que facilita a conversão de dados. Ele é uma adição valiosa ao conjunto de ferramentas de qualquer pessoa que trabalhe com dados.</p>
+  </section>
+     </div>
+   </div>
+   
+   <div id="popupDisclaimer" class="popup">
+     <div class="popup-content">
+       <span class="close">&times;</span>
+      <p>Todas as informações fornecidas neste site, <strong> Trustpilot Ferramentas e Aplicativos Online Grátis</strong>, são apenas para fins educacionais e informativos. Nós nos esforçamos para manter as informações atualizadas e corretas, mas não fazemos garantias de qualquer tipo, expressas ou implícitas, sobre a integridade, precisão, confiabilidade, adequação ou disponibilidade em relação ao site ou às informações, produtos, serviços ou gráficos relacionados contidos no site para qualquer finalidade. Qualquer confiança que você depositar em tais informações é, portanto, estritamente por sua própria conta e risco.</p>
+   
+   <p>Em nenhum caso seremos responsáveis por qualquer perda ou dano, incluindo, sem limitação, perda ou dano indireto ou consequente, ou qualquer perda ou dano decorrente de perda de dados ou lucros decorrentes do uso deste site ou em conexão com ele.</p>
+   
+   <p>Por meio deste site, você pode acessar outros sites que não estão sob o controle de <strong> <a href='/'>Trustpilot</a> Ferramentas e Aplicativos Online Grátis</strong>. Não temos controle sobre a natureza, conteúdo e disponibilidade desses sites. A inclusão de qualquer link não implica necessariamente uma recomendação ou endosso das opiniões expressas dentro deles.</p>
+   
+   <p>Todos os esforços são feitos para manter o site em funcionamento sem problemas. No entanto, <strong> Trustpilot Ferramentas e Aplicativos Online Grátis</strong> não se responsabiliza pelo site estar temporariamente indisponível devido a problemas técnicos além de nosso controle.</p>
+   
+   <p>O uso deste site constitui aceitação dos termos deste disclaimer. Se você não concorda com estes termos, por favor, não use nosso site.</p>
+   
+   <p>Para qualquer dúvida ou preocupação sobre nosso disclaimer, entre em contato conosco.</p>
+   
+     </div>
+   </div>
+     
+     </div> 
+
+
+ 
+ <script>
+
+//Controllers 
+var _gaq = _gaq || [];
+
+$(document).ready(function(){
+  var widthOffset = 345;
+  var heightOffset = 35
+
+  var d = new DataConverter('converter');
+
+  var sidebar = $('#header');
+
+  var win = $(window);
+  var w = win.width() - widthOffset;
+  var h = win.height() - heightOffset;
+
+  d.create(w,h);
+
+  $(".settingsElement").change(updateSettings);
+
+  $(window).bind('resize',function() {  
+
+      w = win.width() - widthOffset;
+      h = win.height() - heightOffset;
+      d.resize(w,h);
+      sidebar.height(h);
+
+    });
+
+
+  function updateSettings (evt) {
+    
+    if (evt) {
+      _gaq.push(['_trackEvent', 'Settings',evt.currentTarget.id ]);
+    };
+
+    d.includeWhiteSpace = $('#includeWhiteSpaceCB').attr('checked');
+    
+    if (d.includeWhiteSpace) {
+      $("input[name=indentType]").removeAttr("disabled");
+      var indentType = $('input[name=indentType]:checked').val();
+      if (indentType === "tabs") {
+        d.indent = "\t";
+      } else if (indentType === "spaces") {
+        d.indent = "  "
+      }
+    } else {
+      $("input[name=indentType]").attr("disabled", "disabled");
+    }
+
+    d.headersProvided = $('#headersProvidedCB').attr('checked');
+
+    if (d.headersProvided) {
+      $("input[name=headerModifications]").removeAttr("disabled");
+
+      var hm = $('input[name=headerModifications]:checked').val();
+      if (hm === "downcase") {
+        d.downcaseHeaders = true;
+        d.upcaseHeaders = false;
+      } else if (hm === "upcase") {
+        d.downcaseHeaders = false;
+        d.upcaseHeaders = true;
+      } else if (hm === "none") {
+        d.downcaseHeaders = false;
+        d.upcaseHeaders = false;
+      }
+    } else {
+      $("input[name=headerModifications]").attr("disabled", "disabled");
+    }
+    
+    d.delimiter = $('input[name=delimiter]:checked').val();
+    d.decimal = $('input[name=decimal]:checked').val();
+    
+    d.useUnderscores = true;
+    
+    d.convert();
+  };
+
+  updateSettings();
+  
+})
+
+
+//Converter 
+//
+//  converter.js
+//  Conversor de Dados 
+//
+ 
+
+
+
+function DataConverter(nodeId) {
+
+//---------------------------------------
+// PUBLIC PROPERTIES
+//---------------------------------------
+
+this.nodeId                 = nodeId;
+this.node                   = $("#"+nodeId);
+
+this.outputDataTypes        = [
+                              {"text":"Actionscript",           "id":"as",               "notes":""},
+                              {"text":"ASP/VBScript",           "id":"asp",              "notes":""},
+                              {"text":"HTML",                   "id":"html",             "notes":""},
+                              {"text":"JSON - Properties",      "id":"json",             "notes":""},
+                              {"text":"JSON - Column Arrays",   "id":"jsonArrayCols",    "notes":""},
+                              {"text":"JSON - Row Arrays",      "id":"jsonArrayRows",    "notes":""},
+                              {"text":"JSON - Dictionary",      "id":"jsonDict",         "notes":""},
+                              {"text":"MySQL",                  "id":"mysql",            "notes":""},
+                              {"text":"PHP",                    "id":"php",              "notes":""},
+                              {"text":"Python - Dict",          "id":"python",           "notes":""},
+                              {"text":"Ruby",                   "id":"ruby",             "notes":""},
+                              {"text":"XML - Properties",       "id":"xmlProperties",    "notes":""},
+                              {"text":"XML - Nodes",            "id":"xml",              "notes":""},
+                              {"text":"XML - Illustrator",      "id":"xmlIllustrator",   "notes":""}];
+this.outputDataType         = "json";
+
+this.columnDelimiter        = "\t";
+this.rowDelimiter           = "\n";
+
+this.inputTextArea          = {};
+this.outputTextArea         = {};
+
+this.inputHeader            = {};
+this.outputHeader           = {};
+this.dataSelect             = {};
+
+this.inputText              = "";
+this.outputText             = "";
+
+this.newLine                = "\n";
+this.indent                 = "  ";
+
+this.commentLine            = "//";
+this.commentLineEnd         = "";
+this.tableName              = "MrDataConverter"
+
+this.useUnderscores         = true;
+this.headersProvided        = true;
+this.downcaseHeaders        = true;
+this.upcaseHeaders          = false;
+this.includeWhiteSpace      = true;
+this.useTabsForIndent       = false;
+
+}
+
+//---------------------------------------
+// PUBLIC METHODS
+//---------------------------------------
+
+DataConverter.prototype.create = function(w,h) {
+var self = this;
+
+//build HTML for converter
+this.inputHeader = $('<div class="groupHeader" id="inputHeader">   <p class="groupHeadline">Insira dados CSV ou delimitados por tabulação. <span class="subhead"> Usando Excel? Basta copiar e colar. Não há dados disponíveis? <a href="#" id="insertSample">Exemplo</a></span></p></div>');
+this.inputTextArea = $('<textarea class="textInputs" id="dataInput"></textarea>');
+var outputHeaderText = '<div class="groupHeader" id="inputHeader"><p class="groupHeadline">Converter para <select name="Data Types" id="dataSelector" >';
+  for (var i=0; i < this.outputDataTypes.length; i++) {
+
+    outputHeaderText += '<option value="'+this.outputDataTypes[i]["id"]+'" '
+            + (this.outputDataTypes[i]["id"] == this.outputDataType ? 'selected="selected"' : '')
+            + '>'
+            + this.outputDataTypes[i]["text"]+'</option>';
+  };
+  outputHeaderText += '</select><span class="subhead" id="outputNotes"></span></p></div>';
+this.outputHeader = $(outputHeaderText);
+this.outputTextArea = $('<textarea class="textInputs" id="dataOutput"></textarea>');
+
+this.node.append(this.inputHeader);
+this.node.append(this.inputTextArea);
+this.node.append(this.outputHeader);
+this.node.append(this.outputTextArea);
+
+this.dataSelect = this.outputHeader.find("#dataSelector");
+
+
+//add event listeners
+
+// $("#convertButton").bind('click',function(evt){
+//   evt.preventDefault();
+//   self.convert();
+// });
+
+this.outputTextArea.click(function(evt){this.select();});
+
+
+$("#insertSample").bind('click',function(evt){
+  evt.preventDefault();
+  self.insertSampleData();
+  self.convert();
+  _gaq.push(['_trackEvent', 'SampleData','InsertGeneric']);
+});
+
+$("#dataInput").keyup(function() {self.convert()});
+$("#dataInput").change(function() {
+  self.convert();
+  _gaq.push(['_trackEvent', 'DataType',self.outputDataType]);
+});
+
+$("#dataSelector").bind('change',function(evt){
+     self.outputDataType = $(this).val();
+     self.convert();
+   });
+
+this.resize(w,h);
+}
+
+DataConverter.prototype.resize = function(w,h) {
+
+var paneWidth = w;
+var paneHeight = (h-90)/2-20;
+
+this.node.css({width:paneWidth});
+this.inputTextArea.css({width:paneWidth-20,height:paneHeight});
+this.outputTextArea.css({width: paneWidth-20, height:paneHeight});
+
+}
+
+DataConverter.prototype.convert = function() {
+
+this.inputText = this.inputTextArea.val();
+this.outputText = "";
+
+
+//make sure there is input data before converting...
+if (this.inputText.length > 0) {
+
+  if (this.includeWhiteSpace) {
+    this.newLine = "\n";
+    // console.log("yes")
+  } else {
+    this.indent = "";
+    this.newLine = "";
+    // console.log("no")
+  }
+
+  CSVParser.resetLog();
+  var parseOutput = CSVParser.parse(this.inputText, this.headersProvided, this.delimiter, this.downcaseHeaders, this.upcaseHeaders);
+
+  var dataGrid = parseOutput.dataGrid;
+  var headerNames = parseOutput.headerNames;
+  var headerTypes = parseOutput.headerTypes;
+  var errors = parseOutput.errors;
+
+  this.outputText = DataGridRenderer[this.outputDataType](dataGrid, headerNames, headerTypes, this.indent, this.newLine);
+
+
+  this.outputTextArea.val(errors + this.outputText);
+
+}; //end test for existence of input text
+}
+
+
+DataConverter.prototype.insertSampleData = function() {
+this.inputTextArea.val("NAME\tVALUE\tCOLOR\tDATE\nTati\t25\tpink\tSep. 18, 2024\nShin\t36\t\"black\tbelt\"\tSep. 27, 2022\nLola\t6\torange\tSep. 29, 2022\nLice\t7\tblue\tSep. 30, 2022");
+}
+
+
+
+//CSVParser
+//
+//  CSVParser.js
+//  Conversor de Dados 
+//
+//  Input CSV or Tab-delimited data and this will parse it into a Data Grid Javascript object
+//
+//  CSV Parsing Function from Ben Nadel, http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm
+
+
+var isDecimal_re     = /^\s*(\+|-)?((\d+([,\.]\d+)?)|([,\.]\d+))\s*$/;
+
+var CSVParser = {
+
+  //---------------------------------------
+  // UTILS
+  //---------------------------------------
+
+  isNumber: function(string) {
+    if( (string == null) || isNaN( new Number(string) ) ) {
+      return false;
+    }
+    return true;
+  },
+
+
+  //---------------------------------------
+  // PARSE
+  //---------------------------------------
+  //var parseOutput = CSVParser.parse(this.inputText, this.headersProvided, this.delimiter, this.downcaseHeaders, this.upcaseHeaders);
+
+  parse: function (input, headersIncluded, delimiterType, downcaseHeaders, upcaseHeaders, decimalSign) {
+
+    var dataArray = [];
+
+    var errors = [];
+
+    //test for delimiter
+    //count the number of commas
+    var RE = new RegExp("[^,]", "gi");
+    var numCommas = input.replace(RE, "").length;
+
+    //count the number of tabs
+    RE = new RegExp("[^\t]", "gi");
+    var numTabs = input.replace(RE, "").length;
+
+    var rowDelimiter = "\n";
+    //set delimiter
+    var columnDelimiter = ",";
+    if (numTabs > numCommas) {
+      columnDelimiter = "\t"
+    };
+
+    if (delimiterType === "comma") {
+      columnDelimiter = ","
+    } else if (delimiterType === "tab") {
+      columnDelimiter = "\t"
+    }
+
+
+    // kill extra empty lines
+    RE = new RegExp("^" + rowDelimiter + "+", "gi");
+    input = input.replace(RE, "");
+    RE = new RegExp(rowDelimiter + "+$", "gi");
+    input = input.replace(RE, "");
+
+    // var arr = input.split(rowDelimiter);
+    //
+    // for (var i=0; i < arr.length; i++) {
+    //   dataArray.push(arr[i].split(columnDelimiter));
+    // };
+
+
+    // dataArray = jQuery.csv(columnDelimiter)(input);
+    dataArray = this.CSVToArray(input, columnDelimiter);
+
+    //escape out any tabs or returns or new lines
+    for (var i = dataArray.length - 1; i >= 0; i--){
+      for (var j = dataArray[i].length - 1; j >= 0; j--){
+        dataArray[i][j] = dataArray[i][j].replace("\t", "\\t");
+        dataArray[i][j] = dataArray[i][j].replace("\n", "\\n");
+        dataArray[i][j] = dataArray[i][j].replace("\r", "\\r");
+      };
+    };
+
+
+    var headerNames = [];
+    var headerTypes = [];
+    var numColumns = dataArray[0].length;
+    var numRows = dataArray.length;
+    if (headersIncluded) {
+
+      //remove header row
+      headerNames = dataArray.splice(0,1)[0];
+      numRows = dataArray.length;
+
+    } else { //if no headerNames provided
+
+      //create generic property names
+      for (var i=0; i < numColumns; i++) {
+        headerNames.push("val"+String(i));
+        headerTypes.push("");
+      };
+
+    }
+
+
+    if (upcaseHeaders) {
+      for (var i = headerNames.length - 1; i >= 0; i--){
+        headerNames[i] = headerNames[i].toUpperCase();
+      };
+    };
+    if (downcaseHeaders) {
+      for (var i = headerNames.length - 1; i >= 0; i--){
+        headerNames[i] = headerNames[i].toLowerCase();
+      };
+    };
+
+    //test all the rows for proper number of columns.
+    for (var i=0; i < dataArray.length; i++) {
+      var numValues = dataArray[i].length;
+      if (numValues != numColumns) {this.log("Error parsing row "+String(i)+". Wrong number of columns.")};
+    };
+
+    //test columns for number data type
+    var numRowsToTest = dataArray.length;
+    var threshold = 0.9;
+    for (var i=0; i < headerNames.length; i++) {
+      var numFloats = 0;
+      var numInts = 0;
+      for (var r=0; r < numRowsToTest; r++) {
+        if (dataArray[r]) {
+          //replace comma with dot if comma is decimal separator
+          if(decimalSign='comma' && isDecimal_re.test(dataArray[r][i])){
+            dataArray[r][i] = dataArray[r][i].replace(",", ".");
+          }
+          if (CSVParser.isNumber(dataArray[r][i])) {
+            numInts++
+            if (String(dataArray[r][i]).indexOf(".") > 0) {
+              numFloats++
+            }
+          };
+        };
+
+      };
+
+      if ((numInts / numRowsToTest) > threshold){
+        if (numFloats > 0) {
+          headerTypes[i] = "float"
+        } else {
+          headerTypes[i] = "int"
+        }
+      } else {
+        headerTypes[i] = "string"
+      }
+    }
+
+
+
+
+
+    return {'dataGrid':dataArray, 'headerNames':headerNames, 'headerTypes':headerTypes, 'errors':this.getLog()}
+
+  },
+
+
+  //---------------------------------------
+  // ERROR LOGGING
+  //---------------------------------------
+  errorLog:[],
+
+  resetLog: function() {
+    this.errorLog = [];
+  },
+
+  log: function(l) {
+    this.errorLog.push(l);
+  },
+
+  getLog: function() {
+    var out = "";
+    if (this.errorLog.length > 0) {
+      for (var i=0; i < this.errorLog.length; i++) {
+        out += ("!!"+this.errorLog[i] + "!!\n");
+      };
+      out += "\n"
+    };
+
+    return out;
+  },
+
+
+
+  //---------------------------------------
+  // UTIL
+  //---------------------------------------
+
+    // This Function from Ben Nadel, http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm
+    // This will parse a delimited string into an array of
+    // arrays. The default delimiter is the comma, but this
+    // can be overriden in the second argument.
+    CSVToArray: function( strData, strDelimiter ){
+      // Check to see if the delimiter is defined. If not,
+      // then default to comma.
+      strDelimiter = (strDelimiter || ",");
+
+      // Create a regular expression to parse the CSV values.
+      var objPattern = new RegExp(
+        (
+          // Delimiters.
+          "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+          // Quoted fields.
+          "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+          // Standard fields.
+          "([^\"\\" + strDelimiter + "\\r\\n]*))"
+        ),
+        "gi"
+        );
+
+
+      // Create an array to hold our data. Give the array
+      // a default empty first row.
+      var arrData = [[]];
+
+      // Create an array to hold our individual pattern
+      // matching groups.
+      var arrMatches = null;
+
+
+      // Keep looping over the regular expression matches
+      // until we can no longer find a match.
+      while (arrMatches = objPattern.exec( strData )){
+
+        // Get the delimiter that was found.
+        var strMatchedDelimiter = arrMatches[ 1 ];
+
+        // Check to see if the given delimiter has a length
+        // (is not the start of string) and if it matches
+        // field delimiter. If id does not, then we know
+        // that this delimiter is a row delimiter.
+        if (
+          strMatchedDelimiter.length &&
+          (strMatchedDelimiter != strDelimiter)
+          ){
+
+          // Since we have reached a new row of data,
+          // add an empty row to our data array.
+          arrData.push( [] );
+
+        }
+
+
+        // Now that we have our delimiter out of the way,
+        // let's check to see which kind of value we
+        // captured (quoted or unquoted).
+        if (arrMatches[ 2 ]){
+
+          // We found a quoted value. When we capture
+          // this value, unescape any double quotes.
+          var strMatchedValue = arrMatches[ 2 ].replace(
+            new RegExp( "\"\"", "g" ),
+            "\""
+            );
+
+        } else {
+
+          // We found a non-quoted value.
+          var strMatchedValue = arrMatches[ 3 ];
+
+        }
+
+
+        // Now that we have our value string, let's add
+        // it to the data array.
+        arrData[ arrData.length - 1 ].push( strMatchedValue );
+      }
+
+      // Return the parsed data.
+      return( arrData );
+    }
+
+
+
+}
+
+//DataGridRender 
+// 
+//  DataGridRenderer.js
+//  Part of Conversor de Dados 
+//  
+ 
+
+
+var DataGridRenderer = {
+  
+  //---------------------------------------
+  // Actionscript
+  //---------------------------------------
+  
+  as: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "[";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loops
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += "{";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          var rowOutput = row[j] || "null";
+        } else {
+          var rowOutput = '"'+( row[j] || "" )+'"';
+        };      
+        outputText += (headerNames[j] + ":" + rowOutput)
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += "}";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += "];";
+    
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // ASP / VBScript
+  //---------------------------------------
+  
+  asp: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "'";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          var rowOutput = row[j] || "null";
+        } else {
+          var rowOutput = '"'+( row[j] || "" )+'"';
+        };
+      outputText += 'myArray('+j+','+i+') = '+rowOutput+newLine;        
+      };
+    };
+    outputText = 'Dim myArray('+(j-1)+','+(i-1)+')'+newLine+outputText;
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // HTML Table
+  //---------------------------------------
+  
+  html: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "<!--";
+    var commentLineEnd = "-->";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    outputText += "<table>"+newLine;
+    outputText += indent+"<thead>"+newLine;
+    outputText += indent+indent+"<tr>"+newLine;
+    
+    for (var j=0; j < numColumns; j++) {
+      outputText += indent+indent+indent+'<th class="'+headerNames[j]+'-cell">';          
+      outputText += headerNames[j];
+      outputText += '</th>'+newLine;
+    };
+    outputText += indent+indent+"</tr>"+newLine;
+    outputText += indent+"</thead>"+newLine;
+    outputText += indent+"<tbody>"+newLine;
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      var rowClassName = ""
+      if (i === numRows-1) {
+        rowClassName = ' class="lastRow"';
+      } else if (i === 0){
+        rowClassName = ' class="firstRow"';
+      }
+      outputText += indent+indent+"<tr"+rowClassName+">"+newLine;
+      for (var j=0; j < numColumns; j++) {
+        outputText += indent+indent+indent+'<td class="'+headerNames[j]+'-cell">';          
+        outputText += row[j]
+        outputText += '</td>'+newLine
+      };
+      outputText += indent+indent+"</tr>"+newLine;
+    };
+    outputText += indent+"</tbody>"+newLine;
+    outputText += "</table>";
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // JSON properties
+  //---------------------------------------
+  
+  json: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "[";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += "{";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          var rowOutput = row[j] || "null";
+        } else {
+          var rowOutput = '"' + ( row[j] || "" ) + '"';
+        };
+  
+      outputText += ('"'+headerNames[j] +'"' + ":" + rowOutput );
+  
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += "}";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += "]";
+    
+    return outputText;
+  },
+  
+  //---------------------------------------
+  // JSON Array of Columns
+  //---------------------------------------
+  jsonArrayCols: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    outputText += "{"+newLine;
+    for (var i=0; i < numColumns; i++) {
+      outputText += indent+'"'+headerNames[i]+'":[';
+      for (var j=0; j < numRows; j++) {
+        if ((headerTypes[i] == "int")||(headerTypes[i] == "float")) {
+          outputText += dataGrid[j][i] || 0;
+        } else {
+          outputText += '"'+(dataGrid[j][i] || "")+'"' ;
+        }
+        if (j < (numRows-1)) {outputText+=","};
+      };
+      outputText += "]";
+      if (i < (numColumns-1)) {outputText += ","+newLine};
+    };
+    outputText += newLine+"}";
+    
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // JSON Array of Rows
+  //---------------------------------------
+  jsonArrayRows: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    outputText += "["+newLine;
+    for (var i=0; i < numRows; i++) {
+      outputText += indent+"[";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          outputText += dataGrid[i][j] || 0;
+        } else {
+          outputText += '"'+(dataGrid[i][j] || "")+'"' ;
+        }
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += "]";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += newLine+"]";
+    
+    
+    return outputText;
+  },
+  
+  
+
+  //---------------------------------------
+  // JSON Dictionary
+  //---------------------------------------
+  jsonDict: function(dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+
+    //begin render loop
+    outputText += "{" + newLine;
+    for (var i = 0; i < numRows; i++) {
+      outputText += indent + '"' + dataGrid[i][0] + '": ';
+      if (numColumns == 2) {
+        outputText += _fmtVal(i, 1, dataGrid);
+      } else {
+        outputText += '{ ';
+        for (var j = 1; j < numColumns; j++) {
+          if (j > 1) outputText += ', ';
+          outputText += '"' + headerNames[j] + '"' + ":" + _fmtVal(i, j, dataGrid);
+        }
+        outputText += '}';
+      }
+      if (i < (numRows - 1)) {
+        outputText += "," + newLine;
+      }
+    }
+    outputText += newLine + "}";
+
+    function _fmtVal(i, j) {
+      if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+        return dataGrid[i][j] || 0;
+      } else {
+        return '"'+(dataGrid[i][j] || "")+'"' ;
+      }
+    }
+
+    return outputText;
+  },
+
+
+  //---------------------------------------
+  // MYSQL
+  //---------------------------------------
+  mysql: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "/*";
+    var commentLineEnd = "*/";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    var tableName = "MrDataConverter"
+    
+    //begin render loop
+    outputText += 'CREATE TABLE '+tableName+' (' + newLine;
+    outputText += indent+"id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"+newLine;
+    for (var j=0; j < numColumns; j++) {
+      var dataType = "VARCHAR(255)";
+      if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+        dataType = headerTypes[j].toUpperCase();
+      };
+      outputText += indent+""+headerNames[j]+" "+dataType;
+      if (j < numColumns - 1) {outputText += ","};
+      outputText += newLine;
+    };
+    outputText += ');' + newLine;
+    outputText += "INSERT INTO "+tableName+" "+newLine+indent+"(";
+    for (var j=0; j < numColumns; j++) {
+      outputText += headerNames[j];
+      if (j < numColumns - 1) {outputText += ","};
+    };
+    outputText += ") "+newLine+"VALUES "+newLine;
+    for (var i=0; i < numRows; i++) {
+      outputText += indent+"(";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float"))  {
+          outputText += dataGrid[i][j] || "null";
+        } else {
+          outputText += "'"+( dataGrid[i][j] || "" )+"'";
+        };
+        
+        if (j < numColumns - 1) {outputText += ","};
+      };
+      outputText += ")";
+      if (i < numRows - 1) {outputText += ","+newLine;};
+    };
+    outputText += ";";
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // PHP
+  //---------------------------------------
+  php: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    var tableName = "MrDataConverter"
+    
+    //begin render loop
+    outputText += "array(" + newLine;
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += indent + "array(";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float"))  {
+          var rowOutput = row[j] || "null";
+        } else {
+          var rowOutput = '"'+(row[j] || "")+'"';
+        };          
+        outputText += ('"'+headerNames[j]+'"' + "=>" + rowOutput)
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += ")";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += newLine + ");";
+    
+    return outputText;
+  },
+  
+  //---------------------------------------
+  // Python dict
+  //---------------------------------------
+  
+  python: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "//";
+    var commentLineEnd = "";
+    var outputText = "[";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += "{";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          var rowOutput = row[j] || "None";
+        } else {
+          var rowOutput = '"'+(row[j] || "")+'"';
+        };
+  
+      outputText += ('"'+headerNames[j] +'"' + ":" + rowOutput );
+  
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += "}";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += "];";
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // Ruby
+  //---------------------------------------
+  ruby: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "#";
+    var commentLineEnd = "";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    var tableName = "MrDataConverter"
+    
+    //begin render loop
+    outputText += "[";
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += "{";
+      for (var j=0; j < numColumns; j++) {
+        if ((headerTypes[j] == "int")||(headerTypes[j] == "float")) {
+          var rowOutput = row[j] || "nil"
+        } else {
+          var rowOutput = '"'+(row[j] || "")+'"';
+        };         
+        outputText += ('"'+headerNames[j]+'"' + "=>" + rowOutput)
+        if (j < (numColumns-1)) {outputText+=","};
+      };
+      outputText += "}";
+      if (i < (numRows-1)) {outputText += ","+newLine};
+    };
+    outputText += "];";
+    
+    return outputText;
+  },
+  
+  
+  //---------------------------------------
+  // XML Nodes
+  //---------------------------------------
+  xml: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "<!--";
+    var commentLineEnd = "-->";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    outputText = '<?xml version="1.0" encoding="UTF-8"?>' + newLine;
+    outputText += "<rows>"+newLine;
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += indent+"<row>"+newLine;
+      for (var j=0; j < numColumns; j++) {
+        outputText += indent+indent+'<'+headerNames[j]+'>';          
+        outputText += row[j] || ""
+        outputText += '</'+headerNames[j]+'>'+newLine
+      };
+      outputText += indent+"</row>"+newLine;
+    };
+    outputText += "</rows>";
+    
+    return outputText;
+    
+  },
+  
+  
+  
+  //---------------------------------------
+  // XML properties
+  //---------------------------------------
+  xmlProperties: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "<!--";
+    var commentLineEnd = "-->";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+  
+    //begin render loop
+    outputText = '<?xml version="1.0" encoding="UTF-8"?>' + newLine;
+    outputText += "<rows>"+newLine;
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += indent+"<row ";
+      for (var j=0; j < numColumns; j++) {
+        outputText += headerNames[j]+'=';          
+        outputText += '"' + row[j] + '" ';
+      };
+      outputText += "></row>"+newLine;
+    };
+    outputText += "</rows>";
+    
+    return outputText;
+    
+  },
+  
+  //---------------------------------------
+  // XML Illustrator
+  //---------------------------------------
+  xmlIllustrator: function (dataGrid, headerNames, headerTypes, indent, newLine) {
+    //inits...
+    var commentLine = "<!--";
+    var commentLineEnd = "-->";
+    var outputText = "";
+    var numRows = dataGrid.length;
+    var numColumns = headerNames.length;
+    
+    //begin render loop
+    outputText = '<?xml version="1.0" encoding="utf-8"?>' + newLine;
+    outputText += '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN"    "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd" [' + newLine;
+    outputText += indent+'<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">' + newLine;
+    outputText += indent+'<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">' + newLine;
+    outputText += indent+'<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">' + newLine;
+    outputText += indent+'<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">' + newLine;
+    outputText += indent+'<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">' + newLine;
+    outputText += indent+'<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">' + newLine;
+    outputText += ']>' + newLine;
+    outputText += '<svg>' + newLine;
+    outputText += '<variableSets  xmlns="&ns_vars;">' + newLine;
+    outputText += indent+'<variableSet  varSetName="binding1" locked="none">' + newLine;
+    outputText += indent+indent+'<variables>' + newLine;
+    for (var i=0; i < numColumns; i++) {
+      outputText += indent+indent+indent+'<variable varName="'+headerNames[i]+'" trait="textcontent" category="&ns_flows;"></variable>' + newLine;
+    };
+    outputText += indent+indent+'</variables>' + newLine;
+    outputText += indent+indent+'<v:sampleDataSets  xmlns:v="http://ns.adobe.com/Variables/1.0/" xmlns="http://ns.adobe.com/GenericCustomNamespace/1.0/">' + newLine;
+    
+    for (var i=0; i < numRows; i++) {
+      var row = dataGrid[i];
+      outputText += indent+indent+indent+'<v:sampleDataSet dataSetName="' + row[0] + '">'+newLine;
+      for (var j=0; j < numColumns; j++) {
+        outputText += indent+indent+indent+indent+'<'+headerNames[j]+'>'+newLine;          
+        outputText += indent+indent+indent+indent+indent+'<p>' + row[j] + '</p>' +newLine;
+        outputText += indent+indent+indent+indent+'</'+headerNames[j]+'>'+newLine
+      };
+      outputText += indent+indent+indent+'</v:sampleDataSet>'+newLine;
+    };
+    
+    outputText += indent+indent+'</v:sampleDataSets>' + newLine;
+    outputText += indent+'</variableSet>' + newLine;
+    outputText += '</variableSets>' + newLine;
+    outputText += '</svg>' + newLine;
+    
+    
+    return outputText;
+    
+  },
+  
+}
+
+ 
+
+  </script>
+
+  
+   <script>
+    // Pega os links que abrem as popups
+   var linkContato = document.getElementById("linkContato");
+   var linkPolitica = document.getElementById("linkPolitica");
+   var linkTermos = document.getElementById("linkSobre");
+   var linkDisclaimer = document.getElementById("linkDisclaimer");
+   
+   // Pega as popups
+   var popupContato = document.getElementById("popupContato");
+   var popupPolitica = document.getElementById("popupPolitica");
+   var popupTermos = document.getElementById("popupSobre");
+   var popupDisclaimer = document.getElementById("popupDisclaimer");
+   
+   // Pega os elementos <span> que fecham as popups
+   var spans = document.getElementsByClassName("close");
+   
+   // Quando o usuário clica nos links, abre as popups correspondentes
+   linkContato.onclick = function() {
+       popupContato.style.display = "block";
+   }
+   linkPolitica.onclick = function() {
+       popupPolitica.style.display = "block";
+   }
+   linkTermos.onclick = function() {
+       popupTermos.style.display = "block";
+   }
+   linkDisclaimer.onclick = function() {
+       popupDisclaimer.style.display = "block";
+   }
+   
+   // Quando o usuário clica em <span> (x), fecha a popup
+   for (let i = 0; i < spans.length; i++) {
+       spans[i].onclick = function() {
+           popupContato.style.display = "none";
+           popupPolitica.style.display = "none";
+           popupSobre.style.display = "none";
+           popupDisclaimer.style.display = "none";
+       }
+   }
+   
+   // Quando o usuário clica em qualquer lugar fora da popup, fecha ela
+   window.onclick = function(event) {
+       if (event.target == popupContato) {
+           popupContato.style.display = "none";
+       } else if (event.target == popupPolitica) {
+           popupPolitica.style.display = "none";
+       } else if (event.target == popupSobre) {
+           popupTermos.style.display = "none";
+       } else if (event.target == popupDisclaimer) {
+           popupDisclaimer.style.display = "none";
+       }
+   }
+   </script>
+  
+</body>
+</html>
